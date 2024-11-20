@@ -1,0 +1,12 @@
+# Signature files
+*.sig
+.manifest
+
+# Releases
+*.zip
+*.op
+
+# Sign scripts
+Sign.bat
+SignComp.bat
+RemoveSign.bat

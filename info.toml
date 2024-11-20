@@ -1,0 +1,8 @@
+[meta]
+name = "Accelerator Indicator"
+author = "rfresh2"
+category = "Overlay"
+version = "1.0.0"
+
+[script]
+dependencies = [ "VehicleState" ]
