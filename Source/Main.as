@@ -2,11 +2,21 @@ void Render()
 {
     auto app = GetApp();
 
-    auto visState = VehicleState::ViewingPlayerState();
-    if (visState is null) {
+	auto playground = cast<CSmArenaClient>(app.CurrentPlayground);
+    if (playground is null) {
+        return; 
+    }
+    auto arena = playground.ArenaInterface;
+    if (arena is null) {
         return;
     }
-    bool isAccelerating = visState.InputGasPedal > 0;
+
+    // Memory address debug
+    // for (uint i = 0x1140; i < 0x1180; i++) {
+    //     UI::Text(Text::Format("0x%04x", i) + " = " + Dev::GetOffsetUint32(arena, i));
+    // }
+    
+    bool isAccelerating = Dev::GetOffsetUint32(arena, 0x1154) & 4 > 0;
 
     if (isAccelerating || S_Preview) {
         auto pos = vec2(Draw::GetWidth(), Draw::GetHeight()) * vec2(S_Accel_ScreenPosX, S_Accel_ScreenPosY);
