@@ -2,7 +2,7 @@ void Render()
 {
     auto app = GetApp();
 
-	auto playground = cast<CSmArenaClient>(app.CurrentPlayground);
+    auto playground = cast<CSmArenaClient>(app.CurrentPlayground);
     if (playground is null) {
         return; 
     }
@@ -31,7 +31,7 @@ void Render()
         } else if (isBraking) {
             color = S_Brake_Color;
         }
-        auto pos = vec2(Draw::GetWidth(), Draw::GetHeight()) * vec2(S_Accel_ScreenPosX, S_Accel_ScreenPosY);
+        auto pos = vec2(Display::GetWidth(), Display::GetHeight()) * vec2(S_Accel_ScreenPosX, S_Accel_ScreenPosY);
         nvgCircle(pos, color, S_Accel_Size);
     }
 }
