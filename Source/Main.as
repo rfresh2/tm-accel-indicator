@@ -32,7 +32,7 @@ void Render()
             color = S_Brake_Color;
         }
         auto pos = vec2(Display::GetWidth(), Display::GetHeight()) * vec2(S_Accel_ScreenPosX, S_Accel_ScreenPosY);
-        nvgCircle(pos, color, S_Accel_Size);
+        nvgCircle(pos, color, S_Accel_Size * UI::GetScale());
     }
 }
 
